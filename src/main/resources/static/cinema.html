@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cines</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="js/funcionesCinema.js"></script>
+    <style>table, th, td { border: 1px solid gray;border-collapse: collapse;}</style>
+</head>
+<body>
+<header>
+    <h1>Cines</h1>
+    <ul>
+        <li><a href="index.html">Volver al Inicio</a></li>
+        <br>
+        <li><a href="client.html">Ir a Clientes</a></li>
+    </ul>
+</header>
+
+<section>
+
+    <div>
+        <div>
+            <h3>Agregar Cine</h3>
+            <input type="text" id="owner" placeholder="Propietario">
+            <input type="text" id="capacity" placeholder="Capacidad">
+            <select name="category" id="category"></select>
+            <input type="text" id="name" placeholder="Nombre">
+            <input type="text" id="description" placeholder="Descripcion">
+        </div>
+        <button id = "postCinema">Guardar!</button>
+    </div>
+    <div>
+        <h3>Lista de Cines</h3>
+        <button id = "getCinemas"> Consultar</button>
+        <table>
+            <thead>
+            <tr>
+                <td>Propietario</td>
+                <td>Capacidad</td>
+                <td>Nombre de Categoria</td>
+                <td>Nombre de Cine</td>
+                <td>Descripción</td>
+            </tr>
+            </thead>
+            <tbody id="loadCinemas"></tbody>
+        </table>
+    </div>
+
+</section>
+</body>
+</html>

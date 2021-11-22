@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="js/funcionesCategoria.js"></script>
+    <style>table, th, td { border: 1px solid gray;border-collapse: collapse;}</style>
+</head>
+<body>
+<header>
+    <h1>Categorias</h1>
+    <ul>
+        <li><a href="index.html">Volver al Inicio</a></li>
+        <li><a href="cinema.html">Ir a Cines</a></li>
+        <br>
+    </ul>
+</header>
+
+<section>
+    <div>
+        <div>
+            <h3>Crear Categoria</h3>
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="description" placeholder="Description">
+        </div>
+        <button id = "postCategory">Guardar!</button>
+    </div>
+    <div>
+        <h3>Lista de Categorias</h3>
+        <button id = "getCategories"> Consultar</button>
+        <table>
+            <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Descripción</td>
+                <td>Cines</td>
+            </tr>
+            </thead>
+            <tbody id = "loadCategories"></tbody>
+        </table>
+    </div>
+
+</section>
+</body>
+</html>

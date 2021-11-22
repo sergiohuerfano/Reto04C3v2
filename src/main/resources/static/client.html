@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="js/funcionesCliente.js"></script>
+    <style>table, th, td { border: 1px solid gray;border-collapse: collapse;}</style>
+</head>
+<body>
+<header>
+    <h1>Clientes</h1>
+    <ul>
+        <li><a href="category.html">Volver al Inicio</a></li>
+        <br>
+        <li><a href="message.html">Ir a Mensajes</a></li>
+    </ul>
+</header>
+
+<section>
+    <div>
+        <div>
+            <h3>Crear Cliente</h3>
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="email" placeholder="Email">
+            <input type="number" id="age" placeholder="Age">
+            <input type="password" id="password" placeholder="Password">
+        </div>
+        <button id = "postClient">Guardar!</button>
+    </div>
+    <div>
+        <h3>Lista de Clientes</h3>
+        <button id = "getClients"> Consultar</button>
+        <table>
+            <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Email</td>
+                <td>Edad</td>
+            </tr>
+            </thead>
+            <tbody id="loadClients"></tbody>
+        </table>
+    </div>
+
+</section>
+</body>
+</html>

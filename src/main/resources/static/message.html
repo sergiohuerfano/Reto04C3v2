@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="js/funcionesMensaje.js"></script>
+    <style>table, th, td { border: 1px solid gray;border-collapse: collapse;}</style>
+</head>
+<body>
+<header>
+    <h1>Mensajes</h1>
+    <ul>
+        <li><a href="index.html">Volver al Inicio</a></li>
+        <br>
+        <li><a href="reservation.html">Ir a Reservas</a></li>
+    </ul>
+</header>
+
+<section>
+    <div>
+        <div>
+            <h3>Crear Mensaje</h3>
+            <input type="text" id="messageText" placeholder="Text" max="250">
+            <select name="idCinema" id="idCinema"></select>
+        </div>
+        <button id = "postMessage">Guardar!</button>
+    </div>
+    <div>
+        <h3>Lista de Mensajes</h3>
+        <button id = "getMessages"> Consultar</button>
+        <table>
+            <thead>
+            <tr>
+                <td>Mensaje</td>
+                <td>Nombre del Cine</td>
+                <td>Nombre de cliente</td>
+            </tr>
+            </thead>
+            <tbody id="loadMessages"></tbody>
+        </table>
+    </div>
+
+</section>
+</body>
+</html>

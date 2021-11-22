@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservaciones</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="js/funcionesReserva.js"></script>
+    <style>table, th, td { border: 1px solid gray;border-collapse: collapse;}</style>
+</head>
+<body>
+<header>
+    <h1>Reservaciones</h1>
+    <ul>
+        <li><a href="index.html">Ir a Inicio</a></li>
+        <br>
+    </ul>
+</header>
+
+<section>
+    <div>
+        <div>
+            <h3>Crear Reserva</h3>
+            <select name="idCinema" id="idCinema"></select>
+            <label for="startDate">Fecha de inicio</label>
+            <input type="date" id="startDate">
+            <label for="finishDate">Fecha de devolución</label>
+            <input type="date" id="finishDate">
+        </div>
+        <button id = "postReservation">Guardar!</button>
+    </div>
+    <div>
+        <h3>Lista de Reservas</h3>
+        <button id = "getReservations"> Consultar</button>
+        <table>
+            <thead>
+            <tr>
+                <td>Id de reservas</td>
+                <td>Nombre de Cine</td>
+                <td>Id de cliente</td>
+                <td>Nombre de cliente</td>
+                <td>Correo de cliente</td>
+                <td>Puntuación</td>
+            </tr>
+            </thead>
+            <tbody id="loadReservations"></tbody>
+        </table>
+    </div>
+</section>
+</body>
+</html>
