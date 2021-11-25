@@ -1,10 +1,16 @@
 package iSergio.Reto04C3.service;
 
+import iSergio.Reto04C3.model.DescriptionAmount;
 import iSergio.Reto04C3.model.Reservacion;
+import iSergio.Reto04C3.model.CountClient;
 import iSergio.Reto04C3.repository.ReservacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,5 +63,36 @@ public class ReservacionService {
             return true;
         }
         return false;
+    }
+
+    public List<CountClient> getTopClientes(){
+        return reservacionRepository.getTopClientes();
+    }
+
+    public DescriptionAmount getStatusReport(){
+        List<Reservacion> completed = reservacionRepository.getReservacionesByDescription("completed");
+        List<Reservacion> cancelled = reservacionRepository.getReservacionesByDescription("cancelled");
+
+        return new DescriptionAmount(completed.size(),cancelled.size());
+    }
+
+    public List<Reservacion> getReservacionesPeriod(String data1, String data2){
+
+        //yyyy-mm-dd
+        SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd");
+        Date dateOne = new Date();
+        Date dateTwo = new Date();
+
+        try{
+            dateOne = parser.parse(data1);
+            dateTwo = parser.parse(data2);
+        }catch (ParseException exp) {
+            exp.printStackTrace();
+        }
+        if(dateOne.before(dateTwo)) {
+            return reservacionRepository.getReservacionesPeriodo(dateOne, dateTwo);
+        }else {
+            return new ArrayList<>();
+        }
     }
 }
